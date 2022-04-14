@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CACABTConn</string>
+    <string name="missatge_rebut">Missatge rebut:</string>
+    <string name="missatge_enviar">Missatge a enviar:</string>
+    <string name="select_a_device">- Seleccionar un dispositiu -</string>
+    <string name="devices_titol">Dispositius:</string>
+    <string name="comandament_titol">Comand.:</string>
+    <string name="escriure_titol">"Escriure: "</string>
+    <string name="enviar_file"><![CDATA[>>]]></string>
+    <string name="missatge_rebut_ini">¿?</string>
+    <string name="enviar_a_dispositiu"><![CDATA[>>]]></string>
+    <string name="select_a_fitxer">- Seleccionar un fitxer -</string>
+    <string name="enviar_simular">¿Enviar o simular el fichero seleccionado?</string>
+    <string name="gestion_fichero">ENVIAR - SIMULAR</string>
+    <string name="simular_texto">Solo simular</string>
+    <string name="enviar_texto">Enviar al BT</string>
+</resources>

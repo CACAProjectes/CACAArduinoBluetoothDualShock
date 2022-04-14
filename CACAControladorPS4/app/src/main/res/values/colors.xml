@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="nivell0">#FFF8E1</color>
+    <color name="nivell1">#B68900</color>
+    <color name="nivell2">#E4AB00</color>
+    <color name="nivell3">#FFD24A</color>
+    <color name="nivell4">#FFE9A6</color>
+
+    <color name="nivellVermell">#F44336</color>
+    <color name="nivellTaronja">#FF9800</color>
+
+    <color name="colorL1">#F44336</color>
+    <color name="colorL1Fons">#FFCECA</color>
+    <color name="colorL2">#FFFD7F</color>
+    <color name="colorL2Fons">#FFFEBE</color>
+    <color name="colorL3">#FF9800</color>
+    <color name="colorL3Fons">#FFE7C4</color>
+    <color name="colorL4">#3F51B5</color>
+    <color name="colorL4Fons">#EDF0FF</color>
+    <color name="colorL5">#009688</color>
+    <color name="colorL5Fons">#C6FDC8</color>
+    <color name="colorL6">#FF9800</color>
+    <color name="colorL6Fons">#FFE6C0</color>
+    <color name="colorL7">#9C27B0</color>
+    <color name="colorL7Fons">#F7C5FF</color>
+
+</resources>

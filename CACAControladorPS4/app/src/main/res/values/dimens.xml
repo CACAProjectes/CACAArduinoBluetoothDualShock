@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="labelFormXLarge">45dp</dimen>
+    <dimen name="labelFormLarge">26dp</dimen>
+    <dimen name="labelFormMedium">22dp</dimen>
+    <dimen name="labelFormShort">18dp</dimen>
+    <dimen name="labelFormXShort">14dp</dimen>
+    <dimen name="labelFormXSShort">16dp</dimen>
+    <dimen name="labelFormXXShort">12dp</dimen>
+
+    <dimen name="iconMedium">30dp</dimen>
+
+    <dimen name="listItemLeft">10dp</dimen>
+
+    <dimen name="paddingLinia">10dp</dimen>
+    <dimen name="paddingLiniaSentit">5dp</dimen>
+
+</resources>

@@ -1,0 +1,33 @@
+es/xuan/cacabtconn/view/Punto.java
+ es.xuan.cacabtconn.view.Punto
+es/xuan/cacabtconn/ctrl/MensajePlot.java
+ es.xuan.cacabtconn.ctrl.MensajePlot
+es/xuan/cacabtconn/ctrl/ControlCalculo.java
+ es.xuan.cacabtconn.ctrl.ControlCalculo
+es/xuan/cacabtconn/ctrl/FuncNoms.java
+ es.xuan.cacabtconn.ctrl.FuncNoms
+es/xuan/cacabtconn/thread/ConnectedThread.java
+ es.xuan.cacabtconn.thread.ConnectedThread
+es/xuan/cacabtconn/dev/ControlBluetooth.java
+ es.xuan.cacabtconn.dev.ControlBluetooth
+ es.xuan.cacabtconn.dev.ControlBluetooth$1
+es/xuan/cacabtconn/files/FilesDao.java
+ es.xuan.cacabtconn.files.FilesDao
+es/xuan/cacabtconn/dev/DeviceBT.java
+ es.xuan.cacabtconn.dev.DeviceBT
+es/xuan/cacabtconn/view/PlotterView.java
+ es.xuan.cacabtconn.view.PlotterView
+es/xuan/cacabtconn/MainActivity.java
+ es.xuan.cacabtconn.MainActivity
+ es.xuan.cacabtconn.MainActivity$1
+ es.xuan.cacabtconn.MainActivity$1$1
+ es.xuan.cacabtconn.MainActivity$2
+ es.xuan.cacabtconn.MainActivity$3
+ es.xuan.cacabtconn.MainActivity$4
+ es.xuan.cacabtconn.MainActivity$5
+ es.xuan.cacabtconn.MainActivity$6
+ es.xuan.cacabtconn.MainActivity$7
+ es.xuan.cacabtconn.MainActivity$8
+ es.xuan.cacabtconn.MainActivity$MyAsyncTask
+es/xuan/cacabtconn/BuildConfig.java
+ es.xuan.cacabtconn.BuildConfig

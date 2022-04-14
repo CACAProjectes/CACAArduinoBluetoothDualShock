@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:overScrollMode="always"
+        android:padding="10sp">
+
+        <LinearLayout
+            android:id="@+id/llDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E1E8E7"
+            android:orientation="horizontal"
+            android:padding="10sp">
+
+            <TextView
+                android:id="@+id/tvDevices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text="@string/devices_titol"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spDevices"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFitxers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E1E8E7"
+            android:orientation="horizontal"
+            android:padding="10sp">
+
+            <TextView
+                android:id="@+id/tvFitxers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:text="@string/comandament_titol"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spFitxers"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></Spinner>
+
+            <Button
+                android:id="@+id/btEnviarFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enviar_a_dispositiu"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llComandamentPrinc"
+            android:layout_width="match_parent"
+            android:layout_height="270sp"
+            android:background="#939393"
+            android:orientation="horizontal"
+            android:padding="10sp">
+
+            <LinearLayout
+                android:id="@+id/llComandamentDib"
+                android:layout_width="250sp"
+                android:layout_height="250sp"
+                android:background="#000000"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <es.xuan.cacabtconn.view.PlotterView
+                    android:id="@+id/mpPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llComandamentCont"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F8F8F8"
+                android:gravity="center_horizontal|top"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/swPujarBaixar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|top"
+                    android:text="@string/escriure_titol"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/llivControl"
+                    android:layout_width="match_parent"
+                    android:layout_height="120sp"
+                    android:layout_weight="1"
+                    android:background="#DFDFDF"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivControl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        app:srcCompat="@mipmap/ic_button_gamepad_round" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMissatges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llMissatgeSendPrinc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#E9F6F5"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    android:id="@+id/tvTitolMissatgeSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="3sp"
+                    android:text="@string/missatge_enviar"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/llMissatgeSend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingStart="10sp">
+
+                    <EditText
+                        android:id="@+id/etMissatgeSend"
+                        android:layout_width="330sp"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/btSend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/enviar_a_dispositiu"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMissatgeRec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#CBDDDA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitolMissatgeRec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3sp"
+                    android:text="@string/missatge_rebut"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollHorizontally="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="3sp">
+
+                        <TextView
+                            android:id="@+id/tvMissatgeRec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lines="5"
+                            android:scrollbars="horizontal|vertical" />
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone">
+                </ProgressBar>
+                <TextView
+                    android:id="@+id/output"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:padding="20dp"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Controlador PS4</string>
+    <string name="devices">Devices:</string>
+    <string name="select_a_device">- Selecciona device -</string>
+
+</resources>

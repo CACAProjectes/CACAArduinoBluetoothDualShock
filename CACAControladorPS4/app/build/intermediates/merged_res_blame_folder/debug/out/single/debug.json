@@ -1,0 +1,690 @@
+[
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_refrescar.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_refrescar.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_gmail_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_gmail_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_refrescar_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_refrescar_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_filtres_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_filtres_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_calendari_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_calendari_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_facebook.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_facebook.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit_add_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit_add_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_filtres_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_filtres_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_instagram_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_instagram_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_twitter_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_twitter_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_facebook_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_facebook_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit_add_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit_add_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_filtres_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_filtres_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_facebook.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_twitter_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_twitter_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_twitter.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_twitter.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_instagram_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_instagram_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_gmail_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_gmail_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_calendari_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_calendari_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_twitter_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_twitter_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_instagram.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_instagram.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_instagram_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_instagram_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_twitter.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_twitter.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_calendari.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_calendari.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_gmail.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_gmail.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_refrescar_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_refrescar_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_filtres.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_filtres.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_refrescar.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_refrescar.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_instagram.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_instagram.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_facebook_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_facebook_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_filtres.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_filtres.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_twitter_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_twitter_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_gmail_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_gmail_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_favorit_add.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_favorit_add.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_calendari_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_calendari_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_twitter_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_twitter_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_refrescar_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_refrescar_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_gmail_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_gmail_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_filtres_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_filtres_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_instagram_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_instagram_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_favorit_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_favorit_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_refrescar.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_refrescar.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_refrescar.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_refrescar.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_gmail_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_gmail_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_instagram.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_instagram.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_instagram_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_instagram_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_favorit.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_favorit.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit_add.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit_add.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_instagram_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_instagram_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_filtres.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_filtres.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_calendari_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_calendari_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_instagram_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_instagram_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_calendari_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_calendari_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_refrescar_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_refrescar_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_facebook_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_facebook_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_gmail.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_gmail.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_filtres_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_filtres_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_refrescar.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_refrescar.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_calendari.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_calendari.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_favorit_add_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_favorit_add_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_refrescar_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_refrescar_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_twitter.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_twitter.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_facebook.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_instagram.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_instagram.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_favorit_add_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_favorit_add_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_facebook_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_facebook_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit_add_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit_add_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_calendari.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_calendari.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_filtres.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_filtres.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_instagram_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_instagram_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_filtres.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_filtres.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit_add_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit_add_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_gmail_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_gmail_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_filtres_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_filtres_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_facebook_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_facebook_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_filtres_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_filtres_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit_add.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit_add.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_twitter_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_twitter_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_facebook_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_facebook_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_gmail_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_gmail_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_twitter_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_twitter_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_calendari.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_calendari.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_refrescar_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_refrescar_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_facebook_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_facebook_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_twitter_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_twitter_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_facebook.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_calendari_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_calendari_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit_add.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit_add.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_gmail.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_gmail.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_gmail.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_gmail.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_calendari.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_calendari.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_gmail.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_gmail.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_facebook.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_refrescar_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_refrescar_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_filtres_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_filtres_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_twitter_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_twitter_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_facebook_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_facebook_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_instagram_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_instagram_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_instagram.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_instagram.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_calendari_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_calendari_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_filtres_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_filtres_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_twitter_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_twitter_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_filtres_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_filtres_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit_add_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit_add_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_twitter.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_twitter.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_favorit_add.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_favorit_add.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_gmail_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_gmail_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_facebook.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_facebook.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_calendari_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_calendari_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_filtres_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_filtres_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_calendari_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_calendari_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_calendari_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_calendari_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_gmail_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_gmail_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_facebook_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_facebook_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_facebook_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_facebook_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_twitter_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_twitter_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_refrescar_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_refrescar_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_calendari.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_calendari.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_instagram_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_instagram_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit_add_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit_add_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_twitter.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_twitter.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_gmail.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_gmail.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_instagram_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_instagram_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_instagram.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_instagram.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_filtres.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_filtres.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_twitter.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_twitter.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit_add_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit_add_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_favorit_add_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-mdpi\\ic_favorit_add_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_refrescar_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_refrescar_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit_add_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit_add_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_refrescar_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_refrescar_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit_add.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit_add.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_favorit_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_favorit_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_gmail_round.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_gmail_round.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_calendari_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_calendari_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_gmail_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_gmail_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_refrescar_foreground.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_refrescar_foreground.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_refrescar.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_refrescar.png"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_facebook_round.xml.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_facebook_round.xml"
+    },
+    {
+        "merged": "C:\\CACAProjectes\\CACAControladorPS4\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_favorit.png.flat",
+        "source": "C:\\CACAProjectes\\CACAControladorPS4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_favorit.png"
+    }
+]

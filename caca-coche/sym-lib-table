@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "caca-coche-rescue")(type "Legacy")(uri "${KIPRJMOD}/caca-coche-rescue.lib")(options "")(descr ""))
+)
