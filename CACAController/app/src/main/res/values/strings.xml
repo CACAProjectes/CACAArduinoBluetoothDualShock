@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CACAController</string>
+    <string name="trazas">- Trazas -</string>
+    <string name="estat">Estado</string>
+    <string name="conectado">Conectado</string>
+    <string name="desconectado">Desconectado</string>
+    <string name="jpad">JPAD</string>
+    <string name="cuadrosMando">Cuadros de mando</string>
+    <string name="jpad_joystick">Joypad/Joystick</string>
+</resources>

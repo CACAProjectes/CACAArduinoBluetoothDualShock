@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Centre international de contrôle</string>
+    <string name="devices">Voici les différents trucs présents dans la zone</string>
+
+    <string name="location_permission_title">Mdr tu t\'es cru chez qui ?</string>
+    <string name="location_permission_message">Donne moi tout ton argent</string>
+
+    <string name="location_denied_title">Location permission denied</string>
+    <string name="location_denied_message">As location permission has not been granted, this app cannot scan for Bluetooth LE devices.</string>
+    <string name="pairing_request">PAIRING requested\n-> Perform pairing steps. Connect again</string>
+
+</resources>

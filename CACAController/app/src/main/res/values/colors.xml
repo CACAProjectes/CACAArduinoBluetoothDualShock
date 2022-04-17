@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="nivell0">#E1E6FF</color>
+    <color name="nivell1">#5E69A8</color>
+    <color name="nivell2">#858FC8</color>
+    <color name="nivell3">#A3AEEC</color>
+    <color name="nivell4">#C2CBFF</color>
+
+    <color name="nivellVermell">#FF1100</color>
+    <color name="nivellTaronja">#FF9800</color>
+    <color name="nivellVerd">#4CAF50</color>
+
+</resources>
