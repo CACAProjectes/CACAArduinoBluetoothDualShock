@@ -51,7 +51,7 @@
         <LinearLayout
             android:id="@+id/llCirculo"
             android:layout_width="1535px"
-            android:layout_height="380px"
+            android:layout_height="500px"
             android:orientation="vertical" >
             <es.xuan.cacacontroller.view.DrawViewLine
                 android:id="@+id/viewMedioCirculo"

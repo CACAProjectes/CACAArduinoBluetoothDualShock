@@ -147,4 +147,24 @@ public class Utils implements Serializable {
 		double res = (Math.PI/2 - pAngulo) * 100d / Math.PI * 2d;
 		return (int)res;
     }
+
+	public static double convert01ToAngulo(double pValor01) {
+		double varRes = 0d;
+		double CTE_ANG_INI = Math.PI * 3 / 4;        // 135º
+		double CTE_ANG_DIF = Math.PI * 1 / 4;        // 45º
+		if (pValor01 >= 0d) {
+			varRes = CTE_ANG_INI - (pValor01 * CTE_ANG_INI);
+		}
+		else {
+			varRes = CTE_ANG_INI - (pValor01 * CTE_ANG_DIF);
+		}
+		return varRes;
+	}
+
+    public static int convert01ToPorcentaje(double pValor01) {
+		int varRes = 0;
+		double CTE_100 = 100d;
+		varRes = (int)(pValor01 * CTE_100);
+		return varRes;
+    }
 }

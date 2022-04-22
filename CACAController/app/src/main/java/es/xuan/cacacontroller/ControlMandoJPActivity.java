@@ -44,16 +44,14 @@ public class ControlMandoJPActivity extends AppCompatActivity {
     private void dibujarVista() {
         if (mDrawViewLine == null)
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
-        mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER());
-        //
+        //  Acelerador - Freno
+        mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
+        //  Intermitente izquierdo
         if (mBotonesMando.isBUTTON_L1())
-            mIntermitentIzq.setVisibility(View.VISIBLE);
-        else
-            mIntermitentIzq.setVisibility(View.INVISIBLE);
+            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        //  Intermitente derecho
         if (mBotonesMando.isBUTTON_R1())
-            mIntermitentDer.setVisibility(View.VISIBLE);
-        else
-            mIntermitentDer.setVisibility(View.INVISIBLE);
+            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
     }
 
     private void inicializar() {
