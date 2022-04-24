@@ -7,18 +7,26 @@ import static es.xuan.cacacontroller.view.Dpad.LEFT;
 import static es.xuan.cacacontroller.view.Dpad.RIGHT;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.view.animation.AnimationSet;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import es.xuan.cacacontroller.utils.Utils;
 import es.xuan.cacacontroller.view.BotonesMandos;
 import es.xuan.cacacontroller.view.Dpad;
 import es.xuan.cacacontroller.view.DrawViewLine;
@@ -27,9 +35,20 @@ public class ControlMandoJPActivity extends AppCompatActivity {
 
     private DrawViewLine mDrawViewLine;
     private Dpad dpad = null;
+    private static int CTE_DPAD_NULL = -1;
     private static BotonesMandos mBotonesMando = null;
     private ImageView mIntermitentIzq = null;
     private ImageView mIntermitentDer = null;
+    private ImageView mIntermitentBackIzq = null;
+    private ImageView mIntermitentBackDer = null;
+    private ImageView mSirena = null;
+    private ImageView mLucesEmergencia = null;
+    private ImageView mLuces = null;
+    private TextView mGradosDireccion = null;
+    private float mAnguloDireccionAnt = 0f;
+    //
+    private static final long CTE_VIBRATION_MS = 50;
+    private Vibrator mVibr = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,24 +60,92 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         inicializar();
     }
 
+    private void rotarRuedas() {
+        // -30º a 30º -> -1 a 1
+        //float fValor = mBotonesMando.getAXIS_X() + mBotonesMando.getAXIS_Y();   // -1 a 1
+        float fValor = mBotonesMando.getAXIS_X();   // -1 a 1
+        float pAnguloIni = mAnguloDireccionAnt;
+        float pAnguloFin = (float)Utils.convert01ToPorcentajeDireccion(fValor);
+        //
+        ImageView imageView1 = (ImageView)findViewById(R.id.ivC1);
+        rotarRuedas(imageView1, pAnguloIni, pAnguloFin);
+        ImageView imageView2 = (ImageView)findViewById(R.id.ivC3);
+        rotarRuedas(imageView2, pAnguloIni, pAnguloFin);
+        //
+        mGradosDireccion.setText("" + (int)pAnguloFin + "º");
+        //
+        mAnguloDireccionAnt = pAnguloFin;
+    }
+
+    private void rotarRuedas(ImageView pImageView, float pAnguloIni, float pAnguloFin) {
+        AnimationSet animSet = new AnimationSet(true);
+        animSet.setInterpolator(new DecelerateInterpolator());
+        animSet.setFillAfter(true);
+        animSet.setFillEnabled(true);
+
+        final RotateAnimation animRotate = new RotateAnimation(pAnguloIni, pAnguloFin,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f,
+                RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+
+        animRotate.setDuration(500);
+        animRotate.setFillAfter(true);
+        animSet.addAnimation(animRotate);
+
+        pImageView.startAnimation(animSet);
+    }
     private void dibujarVista() {
+        //  Dirección ruedas
+        rotarRuedas();
+        //  Acelerador - Freno
         if (mDrawViewLine == null)
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
-        //  Acelerador - Freno
         mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
         //  Intermitente izquierdo
-        if (mBotonesMando.isBUTTON_L1())
-            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        if (mBotonesMando.isBUTTON_L1()) {
+            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            mIntermitentBackIzq.setVisibility(mIntermitentBackIzq.getVisibility() == View.VISIBLE ? View.VISIBLE : View.GONE);
+        }
         //  Intermitente derecho
-        if (mBotonesMando.isBUTTON_R1())
-            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        if (mBotonesMando.isBUTTON_R1()) {
+            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            mIntermitentBackDer.setVisibility(mIntermitentBackDer.getVisibility() == View.VISIBLE ? View.VISIBLE : View.GONE);
+        }
+        //  Luces de emergencia
+        if (mBotonesMando.getDPAD_UP() == UP) {
+            mSirena.setVisibility(mSirena.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        }
+        //  Sirena
+        if (mBotonesMando.getDPAD_DOWN() == DOWN) {
+            mLucesEmergencia.setVisibility(mLucesEmergencia.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        }
+        //  Luces
+        if (mBotonesMando.getDPAD_LEFT() == LEFT) {
+            mLuces.setVisibility(mLuces.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        }
+
     }
 
     private void inicializar() {
         //
+        mVibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        //
+        ImageView ivCerrar = (ImageView)findViewById(R.id.ivD3Cerrar);
+        ivCerrar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Utils.vibrar(mVibr, CTE_VIBRATION_MS);
+                //
+                finish();
+            }
+        });
+        //
         mBotonesMando = new BotonesMandos();
         //
         dpad = new Dpad();
+        mBotonesMando.setDPAD_UP(CTE_DPAD_NULL);
+        mBotonesMando.setDPAD_LEFT(CTE_DPAD_NULL);
+        mBotonesMando.setDPAD_RIGHT(CTE_DPAD_NULL);
+        mBotonesMando.setDPAD_DOWN(CTE_DPAD_NULL);
+        mBotonesMando.setDPAD_CENTER(CTE_DPAD_NULL);
         //
         escribirGameControllerIds();
         // Cargar el layout despues de arrancar la apliación
@@ -72,9 +159,21 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             }
         });
         mIntermitentIzq = (ImageView)findViewById(R.id.ivIntermitenteIzq);
-        mIntermitentIzq.setVisibility(View.INVISIBLE);
+        mIntermitentIzq.setVisibility(View.GONE);
         mIntermitentDer = (ImageView)findViewById(R.id.ivIntermitenteDer);
-        mIntermitentDer.setVisibility(View.INVISIBLE);
+        mIntermitentDer.setVisibility(View.GONE);
+        mIntermitentBackIzq = (ImageView)findViewById(R.id.ivIntermitenteBackIzq);
+        mIntermitentBackIzq.setVisibility(View.VISIBLE);
+        mIntermitentBackDer = (ImageView)findViewById(R.id.ivIntermitenteBackDer);
+        mIntermitentBackDer.setVisibility(View.VISIBLE);
+        mSirena = (ImageView)findViewById(R.id.ivD1);
+        mSirena.setVisibility(View.INVISIBLE);
+        mLucesEmergencia = (ImageView)findViewById(R.id.ivD2);
+        mLucesEmergencia.setVisibility(View.INVISIBLE);
+        mLuces = (ImageView)findViewById(R.id.ivI1);
+        mLuces.setVisibility(View.INVISIBLE);
+        //
+        mGradosDireccion = (TextView)findViewById(R.id.tvDireccionGrados);
     }
 
     private void escribirGameControllerIds() {
@@ -187,29 +286,48 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         // Check if this event if from a D-pad and process accordingly.
         if (dpad.isDpadDevice(event)) {
             int press = dpad.getDirectionPressed(event);
-            switch (press) {
-                case LEFT:
-                    // Do something for LEFT direction press
-                    mBotonesMando.setDPAD_LEFT(LEFT);
-                case RIGHT:
-                    // Do something for RIGHT direction press
-                    mBotonesMando.setDPAD_RIGHT(RIGHT);
-                case UP:
-                    // Do something for UP direction press
-                    mBotonesMando.setDPAD_UP(UP);
-                case DOWN:
-                    // Do something for UP direction press
-                    mBotonesMando.setDPAD_DOWN(DOWN);
-                case CENTER:
-                    // Do something for UP direction press
-                    mBotonesMando.setDPAD_CENTER(CENTER);
-                default:
-                    break;
+            if (press == -1) {
+                // Key UP
+                if (mBotonesMando.getDPAD_LEFT() != CTE_DPAD_NULL)
+                    mBotonesMando.setDPAD_LEFT(CTE_DPAD_NULL);
+                if (mBotonesMando.getDPAD_RIGHT() != CTE_DPAD_NULL)
+                    mBotonesMando.setDPAD_RIGHT(CTE_DPAD_NULL);
+                if (mBotonesMando.getDPAD_DOWN() != CTE_DPAD_NULL)
+                    mBotonesMando.setDPAD_DOWN(CTE_DPAD_NULL);
+                if (mBotonesMando.getDPAD_UP() != CTE_DPAD_NULL)
+                    mBotonesMando.setDPAD_UP(CTE_DPAD_NULL);
+                if (mBotonesMando.getDPAD_CENTER() != CTE_DPAD_NULL)
+                    mBotonesMando.setDPAD_CENTER(CTE_DPAD_NULL);
             }
-            if (press > -1) {
-                dibujarVista();
-                return true;
+            else {
+                // Key DOWN
+                switch (press) {
+                    case LEFT:
+                        // Do something for LEFT direction press
+                        mBotonesMando.setDPAD_LEFT(LEFT);
+                        break;
+                    case RIGHT:
+                        // Do something for RIGHT direction press
+                        mBotonesMando.setDPAD_RIGHT(RIGHT);
+                        break;
+                    case UP:
+                        // Do something for UP direction press
+                        mBotonesMando.setDPAD_UP(UP);
+                        break;
+                    case DOWN:
+                        // Do something for UP direction press
+                        mBotonesMando.setDPAD_DOWN(DOWN);
+                        break;
+                    case CENTER:
+                        // Do something for UP direction press
+                        mBotonesMando.setDPAD_CENTER(CENTER);
+                        break;
+                    default:
+                        break;
+                }
             }
+            dibujarVista();
+            return true;
         }
         // Check that the event came from a game controller
         if ((event.getSource() & InputDevice.SOURCE_JOYSTICK) ==

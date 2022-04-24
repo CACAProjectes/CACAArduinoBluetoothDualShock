@@ -167,4 +167,10 @@ public class Utils implements Serializable {
 		varRes = (int)(pValor01 * CTE_100);
 		return varRes;
     }
+
+    public static double convert01ToPorcentajeDireccion(double fValor) {
+		// -30º a 30º -> -1 a 1
+		double CTE_ANG_DIR = 30;
+		return fValor * CTE_ANG_DIR;
+    }
 }

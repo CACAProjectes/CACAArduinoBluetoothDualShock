@@ -12,8 +12,7 @@
 
     <dimen name="listItemLeft">10dp</dimen>
 
-    <dimen name="paddingLinia">10dp</dimen>
-    <dimen name="paddingLiniaSentit">5dp</dimen>
+    <dimen name="paddingBotones">2dp</dimen>
 
     <dimen name="LabelFormVertical">100dp</dimen>
     <dimen name="listItemLeftShort">5dp</dimen>

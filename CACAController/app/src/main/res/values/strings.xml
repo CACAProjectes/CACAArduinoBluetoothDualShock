@@ -7,4 +7,5 @@
     <string name="jpad">JPAD</string>
     <string name="cuadrosMando">Cuadros de mando</string>
     <string name="jpad_joystick">Joypad/Joystick</string>
+    <string name="direccion">DIRECCIÓN</string>
 </resources>
