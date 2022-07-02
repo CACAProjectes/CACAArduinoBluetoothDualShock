@@ -25,30 +25,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitStart"
-            android:visibility="gone"
+            android:visibility="invisible"
             app:srcCompat="@mipmap/ic_intermitente_izq_round" />
-        <ImageView
-            android:id="@+id/ivIntermitenteBackIzq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitStart"
-            app:srcCompat="@mipmap/ic_int_back_izq_round" />
         <ImageView
             android:id="@+id/ivIntermitenteDer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitEnd"
-            android:visibility="gone"
+            android:visibility="invisible"
             app:srcCompat="@mipmap/ic_intermitente_der_round" />
-        <ImageView
-            android:id="@+id/ivIntermitenteBackDer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitEnd"
-            app:srcCompat="@mipmap/ic_int_back_der_round" />
     </LinearLayout>
 
         <LinearLayout

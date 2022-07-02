@@ -101,15 +101,11 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
         mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
         //  Intermitente izquierdo
-        if (mBotonesMando.isBUTTON_L1()) {
-            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-            mIntermitentBackIzq.setVisibility(mIntermitentBackIzq.getVisibility() == View.VISIBLE ? View.VISIBLE : View.GONE);
-        }
+        if (mBotonesMando.isBUTTON_L1())
+            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
         //  Intermitente derecho
-        if (mBotonesMando.isBUTTON_R1()) {
-            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-            mIntermitentBackDer.setVisibility(mIntermitentBackDer.getVisibility() == View.VISIBLE ? View.VISIBLE : View.GONE);
-        }
+        if (mBotonesMando.isBUTTON_R1())
+            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
         //  Luces de emergencia
         if (mBotonesMando.getDPAD_UP() == UP) {
             mSirena.setVisibility(mSirena.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
@@ -159,13 +155,11 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             }
         });
         mIntermitentIzq = (ImageView)findViewById(R.id.ivIntermitenteIzq);
-        mIntermitentIzq.setVisibility(View.GONE);
         mIntermitentDer = (ImageView)findViewById(R.id.ivIntermitenteDer);
-        mIntermitentDer.setVisibility(View.GONE);
-        mIntermitentBackIzq = (ImageView)findViewById(R.id.ivIntermitenteBackIzq);
-        mIntermitentBackIzq.setVisibility(View.VISIBLE);
-        mIntermitentBackDer = (ImageView)findViewById(R.id.ivIntermitenteBackDer);
-        mIntermitentBackDer.setVisibility(View.VISIBLE);
+        //mIntermitentBackIzq = (ImageView)findViewById(R.id.ivIntermitenteBackIzq);
+        //mIntermitentBackIzq.setVisibility(View.VISIBLE);
+        //mIntermitentBackDer = (ImageView)findViewById(R.id.ivIntermitenteBackDer);
+        //mIntermitentBackDer.setVisibility(View.VISIBLE);
         mSirena = (ImageView)findViewById(R.id.ivD1);
         mSirena.setVisibility(View.INVISIBLE);
         mLucesEmergencia = (ImageView)findViewById(R.id.ivD2);
@@ -325,9 +319,9 @@ public class ControlMandoJPActivity extends AppCompatActivity {
                     default:
                         break;
                 }
+                //dibujarVista();
+                //return true;
             }
-            dibujarVista();
-            return true;
         }
         // Check that the event came from a game controller
         if ((event.getSource() & InputDevice.SOURCE_JOYSTICK) ==
@@ -343,9 +337,10 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             }
             // Process the current movement sample in the batch (position -1)
             processJoystickInput(event, -1);
-            dibujarVista();
-            return true;
+            //dibujarVista();
+            //return true;
         }
+        dibujarVista();
         return super.onGenericMotionEvent(event);
     }
 
