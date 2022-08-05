@@ -20,20 +20,36 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/ivIntermitenteIzqBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitStart"
+            android:visibility="visible"
+            app:srcCompat="@mipmap/ic_int_back_izq_round" />
+        <ImageView
             android:id="@+id/ivIntermitenteIzq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitStart"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:srcCompat="@mipmap/ic_intermitente_izq_round" />
+        <ImageView
+            android:id="@+id/ivIntermitenteDerBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="fitEnd"
+            android:visibility="visible"
+            app:srcCompat="@mipmap/ic_int_back_der_round" />
         <ImageView
             android:id="@+id/ivIntermitenteDer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitEnd"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:srcCompat="@mipmap/ic_intermitente_der_round" />
     </LinearLayout>
 
@@ -41,30 +57,47 @@
             android:id="@+id/llMedioCirculo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="start"
             android:background="@color/nivell0"
             android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ivI1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="@dimen/paddingBotones"
-                android:scaleType="fitStart"
-                app:srcCompat="@mipmap/ic_luces_round" />
+            <LinearLayout
+                android:id="@+id/llLuces"
+                android:layout_width="250px"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/ivLucesBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/paddingBotones"
+                    android:scaleType="fitStart"
+                    android:visibility="visible"
+                    app:srcCompat="@mipmap/ic_luces_back_round" />
+                <ImageView
+                    android:id="@+id/ivLuces"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/paddingBotones"
+                    android:scaleType="fitStart"
+                    android:visibility="gone"
+                    app:srcCompat="@mipmap/ic_luces" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llCirculo"
-                android:layout_width="1535px"
+                android:layout_width="1000px"
                 android:layout_height="match_parent"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <es.xuan.cacacontroller.view.DrawViewLine
                     android:id="@+id/viewMedioCirculo"
-                    android:layout_width="1535px"
-                    android:layout_height="500px"
+                    android:layout_width="700px"
+                    android:layout_height="300px"
                     android:background="@color/nivell0"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal" />
 
                 <LinearLayout
@@ -126,18 +159,35 @@
             <LinearLayout
                 android:id="@+id/llDerecha"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">e
                 <ImageView
-                    android:id="@+id/ivD1"
+                    android:id="@+id/ivSirenaBack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="@dimen/paddingBotones"
                     android:scaleType="fitEnd"
-                    app:srcCompat="@mipmap/ic_sirena_round" />
+                    android:visibility="visible"
+                    app:srcCompat="@mipmap/ic_sirena_policia_back_round" />
+                <ImageView
+                    android:id="@+id/ivSirena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/paddingBotones"
+                    android:scaleType="fitEnd"
+                    android:visibility="gone"
+                    app:srcCompat="@mipmap/ic_sirena_policia_round" />
 
+                <ImageView
+                    android:id="@+id/ivD2Back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/paddingBotones"
+                    android:scaleType="fitEnd"
+                    app:srcCompat="@mipmap/ic_averia_back_round" />
                 <ImageView
                     android:id="@+id/ivD2"
                     android:layout_width="match_parent"
@@ -145,6 +195,7 @@
                     android:orientation="horizontal"
                     android:padding="@dimen/paddingBotones"
                     android:scaleType="fitEnd"
+                    android:visibility="gone"
                     app:srcCompat="@mipmap/ic_averia_round" />
 
                 <ImageView
@@ -154,7 +205,7 @@
                     android:orientation="horizontal"
                     android:padding="@dimen/paddingBotones"
                     android:scaleType="fitEnd"
-                    app:srcCompat="@mipmap/ic_cerrar_round" />
+                    app:srcCompat="@mipmap/ic_cerrar_redondo_round" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -8,4 +8,11 @@
     <string name="cuadrosMando">Cuadros de mando</string>
     <string name="jpad_joystick">Joypad/Joystick</string>
     <string name="direccion">DIRECCIÓN</string>
+    <string name="h6">H6</string>
+    <string name="logJPADConectado">JPAD Conectado!</string>
+    <string name="logJPADDesconectado">JPAD Desconectado!</string>
+    <string name="logH6Conectado">H6 Conectado!</string>
+    <string name="logH6Desconectado">H6 Desconectado!</string>
+    <string name="mensajeInicio">Mensaje de inicio</string>
+
 </resources>

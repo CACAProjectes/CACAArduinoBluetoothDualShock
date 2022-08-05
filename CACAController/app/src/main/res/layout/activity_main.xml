@@ -49,11 +49,12 @@
             android:gravity="start"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/tvTrazas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/trazas"
                 android:textColor="@color/black"
-                android:textSize="@dimen/labelFormShort"
+                android:textSize="@dimen/labelFormXXShort"
                 android:paddingLeft="@dimen/listItemLeftShort"
                 android:textStyle="normal" />
 
@@ -82,21 +83,32 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ivSenyal1"
+                android:id="@+id/ivSenyalJpadKO"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
+                android:paddingLeft="@dimen/listItemLeftShort"
+                app:srcCompat="@mipmap/ic_bluetooth_ko_round" />
+            <ImageView
+                android:id="@+id/ivSenyalJpadOK"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:scaleType="centerInside"
                 android:paddingLeft="@dimen/listItemLeftShort"
                 app:srcCompat="@mipmap/ic_bluetooth_ok_round" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="4dp"
                 android:text="@string/jpad"
                 android:textColor="@color/black"
                 android:textSize="@dimen/labelFormShort"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
             <TextView
+                android:id="@+id/tvJPADConnect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/conectado"
@@ -112,21 +124,32 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ivSenyal2"
+                android:id="@+id/ivSenyalH6KO"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:scaleType="fitStart"
                 android:paddingLeft="@dimen/listItemLeftShort"
                 app:srcCompat="@mipmap/ic_bluetooth_ko_round" />
+            <ImageView
+                android:id="@+id/ivSenyalH6OK"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:paddingLeft="@dimen/listItemLeftShort"
+                app:srcCompat="@mipmap/ic_bluetooth_ok_round" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/jpad"
+                android:paddingHorizontal="4dp"
+                android:text="@string/h6"
                 android:textColor="@color/black"
                 android:textSize="@dimen/labelFormShort"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
             <TextView
+                android:id="@+id/tvH6Connect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/desconectado"

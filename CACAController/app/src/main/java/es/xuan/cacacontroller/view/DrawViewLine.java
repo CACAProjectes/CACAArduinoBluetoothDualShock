@@ -17,11 +17,11 @@ public class DrawViewLine extends View {
     private Paint paintFondo = new Paint();
     private Paint paintFondoAtencion = new Paint();
     private Paint paintFondoAtencionAtras = new Paint();
-    private static final double CTE_X1 = 767;
-    private static final double CTE_Y1 = 410;
-    private static double CTE_RADIO = 300;
-    private static double CTE_RADIO_FONDO_MIN = 250;
-    private static double CTE_RADIO_FONDO_MAX = 350;
+    private static final double CTE_X1 = 375;
+    private static final double CTE_Y1 = 200;
+    private static double CTE_RADIO = 150;
+    private static double CTE_RADIO_FONDO_MIN = 125;
+    private static double CTE_RADIO_FONDO_MAX = 175;
     private static double CTE_RADIO_PEQ = 10;
     private static double CTE_ANG_INI = Math.PI * 3 / 4;        // 135º
     private static double CTE_ANG_MEDIO = Math.PI * 375 / 1000; // 67,5º

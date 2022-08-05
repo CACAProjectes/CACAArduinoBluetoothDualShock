@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -26,6 +27,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import es.xuan.cacacontroller.dev.ControlBluetooth;
+import es.xuan.cacacontroller.dev.DeviceBT;
 import es.xuan.cacacontroller.utils.Utils;
 import es.xuan.cacacontroller.view.BotonesMandos;
 import es.xuan.cacacontroller.view.Dpad;
@@ -42,13 +45,20 @@ public class ControlMandoJPActivity extends AppCompatActivity {
     private ImageView mIntermitentBackIzq = null;
     private ImageView mIntermitentBackDer = null;
     private ImageView mSirena = null;
+    private ImageView mSirenaBack = null;
     private ImageView mLucesEmergencia = null;
+    private ImageView mLucesEmergenciaBack = null;
     private ImageView mLuces = null;
+    private ImageView mLucesBack = null;
     private TextView mGradosDireccion = null;
     private float mAnguloDireccionAnt = 0f;
     //
     private static final long CTE_VIBRATION_MS = 50;
     private Vibrator mVibr = null;
+    //
+    private static final String CTE_NAME_H6 = "H6";
+    private ControlBluetooth m_cb = null;
+    private ArrayList<DeviceBT> m_listaDev = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +68,18 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         mantenerPantallaEncendida();
         //
         inicializar();
+        //
+        inicialitzarBT(CTE_NAME_H6);
+        //
+        enviarMensaje();
+    }
+
+    private void enviarMensaje() {
+        String strRes = getString(R.string.desconectado);
+        if (m_cb != null) {
+            strRes = m_cb.enviarMissatge(getString(R.string.mensajeInicio));
+        }
+        Log.i("[BLUETOOTH-H6]","Mensaje: " + getString(R.string.mensajeInicio) + " - Resultado: " + strRes);
     }
 
     private void rotarRuedas() {
@@ -101,24 +123,60 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
         mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
         //  Intermitente izquierdo
-        if (mBotonesMando.isBUTTON_L1())
-            mIntermitentIzq.setVisibility(mIntermitentIzq.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        if (mBotonesMando.isBUTTON_L1()) {
+            if (mIntermitentIzq.getVisibility() == View.VISIBLE) {
+                mIntermitentIzq.setVisibility(View.GONE);
+                mIntermitentBackIzq.setVisibility(View.VISIBLE);
+            }
+            else {
+                mIntermitentIzq.setVisibility(View.VISIBLE);
+                mIntermitentBackIzq.setVisibility(View.GONE);
+            }
+        }
         //  Intermitente derecho
-        if (mBotonesMando.isBUTTON_R1())
-            mIntermitentDer.setVisibility(mIntermitentDer.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+        if (mBotonesMando.isBUTTON_R1()) {
+            if (mIntermitentDer.getVisibility() == View.VISIBLE) {
+                mIntermitentDer.setVisibility(View.GONE);
+                mIntermitentBackDer.setVisibility(View.VISIBLE);
+            }
+            else {
+                mIntermitentDer.setVisibility(View.VISIBLE);
+                mIntermitentBackDer.setVisibility(View.GONE);
+            }
+        }
         //  Luces de emergencia
         if (mBotonesMando.getDPAD_UP() == UP) {
-            mSirena.setVisibility(mSirena.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+            if (mSirena.getVisibility() == View.VISIBLE) {
+                mSirena.setVisibility(View.GONE);
+                mSirenaBack.setVisibility(View.VISIBLE);
+            }
+            else {
+                mSirena.setVisibility(View.VISIBLE);
+                mSirenaBack.setVisibility(View.GONE);
+            }
         }
         //  Sirena
         if (mBotonesMando.getDPAD_DOWN() == DOWN) {
-            mLucesEmergencia.setVisibility(mLucesEmergencia.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+            if (mLucesEmergencia.getVisibility() == View.VISIBLE) {
+                mLucesEmergencia.setVisibility(View.GONE);
+                mLucesEmergenciaBack.setVisibility(View.VISIBLE);
+            }
+            else {
+                mLucesEmergencia.setVisibility(View.VISIBLE);
+                mLucesEmergenciaBack.setVisibility(View.GONE);
+            }
         }
         //  Luces
         if (mBotonesMando.getDPAD_LEFT() == LEFT) {
-            mLuces.setVisibility(mLuces.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+            if (mLuces.getVisibility() == View.VISIBLE) {
+                mLuces.setVisibility(View.GONE);
+                mLucesBack.setVisibility(View.VISIBLE);
+            }
+            else {
+                mLuces.setVisibility(View.VISIBLE);
+                mLucesBack.setVisibility(View.GONE);
+            }
         }
-
     }
 
     private void inicializar() {
@@ -155,17 +213,29 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             }
         });
         mIntermitentIzq = (ImageView)findViewById(R.id.ivIntermitenteIzq);
+        mIntermitentIzq.setVisibility(View.GONE);
+        mIntermitentBackIzq = (ImageView)findViewById(R.id.ivIntermitenteIzqBack);
+        mIntermitentBackIzq.setVisibility(View.VISIBLE);
+        //
         mIntermitentDer = (ImageView)findViewById(R.id.ivIntermitenteDer);
-        //mIntermitentBackIzq = (ImageView)findViewById(R.id.ivIntermitenteBackIzq);
-        //mIntermitentBackIzq.setVisibility(View.VISIBLE);
-        //mIntermitentBackDer = (ImageView)findViewById(R.id.ivIntermitenteBackDer);
-        //mIntermitentBackDer.setVisibility(View.VISIBLE);
-        mSirena = (ImageView)findViewById(R.id.ivD1);
-        mSirena.setVisibility(View.INVISIBLE);
+        mIntermitentDer.setVisibility(View.GONE);
+        mIntermitentBackDer = (ImageView)findViewById(R.id.ivIntermitenteDerBack);
+        mIntermitentBackDer.setVisibility(View.VISIBLE);
+        //
+        mSirena = (ImageView)findViewById(R.id.ivSirena);
+        mSirena.setVisibility(View.GONE);
+        mSirenaBack = (ImageView)findViewById(R.id.ivSirenaBack);
+        mSirenaBack.setVisibility(View.VISIBLE);
+        //
         mLucesEmergencia = (ImageView)findViewById(R.id.ivD2);
-        mLucesEmergencia.setVisibility(View.INVISIBLE);
-        mLuces = (ImageView)findViewById(R.id.ivI1);
-        mLuces.setVisibility(View.INVISIBLE);
+        mLucesEmergencia.setVisibility(View.GONE);
+        mLucesEmergenciaBack = (ImageView)findViewById(R.id.ivD2Back);
+        mLucesEmergenciaBack.setVisibility(View.VISIBLE);
+        //
+        mLuces = (ImageView)findViewById(R.id.ivLuces);
+        mLuces.setVisibility(View.GONE);
+        mLucesBack = (ImageView)findViewById(R.id.ivLucesBack);
+        mLucesBack.setVisibility(View.VISIBLE);
         //
         mGradosDireccion = (TextView)findViewById(R.id.tvDireccionGrados);
     }
@@ -404,5 +474,27 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             }
         }
         return 0;
+    }
+
+    private void inicialitzarBT(String p_strDispName) {
+        //
+        if (m_cb == null)
+            m_cb = new ControlBluetooth(this);
+        //
+        m_listaDev = m_cb.listDevicesBT();
+        //
+        DeviceBT devBT = cercarPropsDevice(m_listaDev, p_strDispName);
+        if (devBT != null)
+            m_cb.inicialitzarBT(devBT.getMAC(), devBT.getUUID());
+        else
+            m_cb = null;
+    }
+
+    private DeviceBT cercarPropsDevice(ArrayList<DeviceBT> plistaDev, String pDeviceName) {
+        for (DeviceBT devBT : plistaDev) {
+            if (devBT.getName().equals(pDeviceName))
+                return devBT;
+        }
+        return null;
     }
 }
