@@ -42,6 +42,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -204,13 +205,12 @@ public class ControlBluetooth extends Context {
                     if (msg.what == ConnectedThread.RESPONSE_MESSAGE) {
                         String txt = (String) msg.obj;
                         try {
-                            // TODO - 04/08/2022
-                            /*
                             if (!txt.equals(""))
-                                m_activity.getTvResponse().setText(formatDate2String() + " BT " + txt + CTE_CAMBIO_LINEA_FIC + m_activity.getTvResponse().getText().toString());
+                                //m_activity.getTvResponse().setText(formatDate2String() + " BT " + txt + CTE_CAMBIO_LINEA_FIC + m_activity.getTvResponse().getText().toString());
+                                Log.i("[BLUETOOTH-rec]", formatDate2String() + " BT " + txt);
                             if (txt.contains("ACCION_FINALIZADA"))
-                                m_activity.setbProcesFin(true);
-                             */
+                                //m_activity.setbProcesFin(true);
+                                Log.i("[BLUETOOTH-rec]", formatDate2String() + " BT VACIO!!!");
                         } catch (Exception ex) {
                             System.err.println("Error en CBT: " + ex);
                         }
@@ -229,14 +229,16 @@ public class ControlBluetooth extends Context {
 
     public String enviarMissatge(String pMissatge) {
         String strMensaje = "";
-        Log.i("[BLUETOOTH]", "Attempting to send data");
         if (mmSocket.isConnected() && btt != null) { //if we have connection to the bluetoothmodule
-            byte[] bMissatge = (pMissatge + "\n").getBytes();
+            byte[] bMissatge = (pMissatge + "\r").getBytes();
+            Log.i("[BLUETOOTH]", new String(bMissatge, StandardCharsets.UTF_8));
             btt.write(bMissatge);
+            /*
             try {
                 Thread.sleep(100);
             } catch (Exception ex) {
             }
+             */
         } else {
             strMensaje = " FICHERO " + "Se ha producido un ERROR" + CTE_CAMBIO_LINEA_FIC;
         }

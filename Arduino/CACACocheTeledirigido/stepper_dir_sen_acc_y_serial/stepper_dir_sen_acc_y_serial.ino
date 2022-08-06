@@ -12,6 +12,9 @@ int iLuz5 = 0;
 Servo servoAcc;   // servo PWM3 - Control accelerador - 0-90
 Servo servoSen;   // servo PWM5 - Control sentido - 25 - 60
 Servo servoDir;   // servo PWM6 - Control dirección - 10 - 70
+//
+String datosSerial;
+int contadorDatosSerial;
 
 void setup()
 {
@@ -27,27 +30,51 @@ void setup()
   servoSen.write(iServoSen);
   servoDir.write(iServoDir);
   // initialize the serial port:
-  Serial.begin(9600);
+  Serial.begin(115200);
+  Serial1.begin(115200);
+  //
+  datosSerial = "";
+  contadorDatosSerial = 0;
 }
 
 void loop()
 {
-  if (Serial.available() > 0) {
-    String datosSerial = Serial.readString();
-    //
-    descomponerDatosSerial(datosSerial);
-    //
-    if (iServoAcc >= 0 && iServoAcc <= 100) {
-      accionarAccelerador();      
+  if (Serial1.available() > 0) {
+    /*
+    Serial.println("Inicio");
+    String datosSerial = Serial1.readString();
+    Serial.println(datosSerial);
+    Serial.println("Fin");
+    */
+    char inChar = Serial1.read();
+    if (inChar == 13 || inChar == 10 || contadorDatosSerial > 14) {
+      //
+      int ii = datosSerial.length() - 14;
+      Serial.println("+"+datosSerial+"+");
+      datosSerial = datosSerial.substring(ii);
+      Serial.println("-"+datosSerial+"-");
+      //
+      descomponerDatosSerial(datosSerial);
+      //
+      if (iServoAcc >= 0 && iServoAcc <= 100) {
+        accionarAccelerador();      
+      }    
+      //
+      if (iServoDir >= 0 && iServoDir <= 100) {
+        accionarDireccion();      
+      }  
+      //
+      if (iServoSen >= 0 && iServoSen <= 100) {
+        accionarSentido();      
+      } 
+      //
+      datosSerial = ""; 
+      contadorDatosSerial = 0;
+    }
+    else {
+      datosSerial.concat(inChar);
+      contadorDatosSerial++;
     }    
-    //
-    if (iServoDir >= 0 && iServoDir <= 100) {
-      accionarDireccion();      
-    }  
-    //
-    if (iServoSen >= 0 && iServoSen <= 100) {
-      accionarSentido();      
-    }  
   }
   delay(10); // waits for the servo to get there
 }
@@ -56,8 +83,6 @@ void accionarAccelerador() {
   // servo PWM3 - Control accelerador - 0-50
   int iServoAccPlaca = map(iServoAcc, 0, 100, 0, 90);
   servoAcc.write(iServoAccPlaca);  
-  Serial.print("iServoAcc: ");
-  Serial.print(iServoAccPlaca);
 }
 void accionarDireccion() {
   // servo PWM6 - Control dirección - 10 - 70

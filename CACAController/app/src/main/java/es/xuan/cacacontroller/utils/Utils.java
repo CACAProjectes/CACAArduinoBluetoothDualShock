@@ -173,4 +173,12 @@ public class Utils implements Serializable {
 		double CTE_ANG_DIR = 30;
 		return fValor * CTE_ANG_DIR;
     }
+	public static String completarCeros(String pText, int pTamano) {
+		String str = "";
+		if (pText.length() > pTamano)
+			return pText.substring(0,3);
+		for (int i=0;i<pTamano - pText.length();i++)
+			str += "0";
+		return str + pText;
+	}
 }

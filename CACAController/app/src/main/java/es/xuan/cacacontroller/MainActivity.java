@@ -27,21 +27,24 @@ import es.xuan.cacacontroller.utils.Utils;
 public class MainActivity extends AppCompatActivity {
 
     private static final long CTE_VIBRATION_MS = 50;
-    private static final String CTE_NAME_H6 = "H6";
+    private static final String CTE_NAME_h3 = "H3";
+    private static final String CTE_NAME_JPAD = "Wireless Controller";
     private final static String CTE_CAMBIO_LINEA = "\r\n";
     //
     private Vibrator mVibr = null;
     //
     private ControlBluetooth m_cb = null;
     private ArrayList<DeviceBT> m_listaDev = null;
+    private boolean mIsJPADConectado = false;
+    private boolean mIsH3Conectado = false;
     //
     private ImageView ivBTJPok = null;
     private ImageView ivBTJPko = null;
-    private ImageView ivBTH6ok = null;
-    private ImageView ivBTH6ko = null;
+    private ImageView ivBTh3ok = null;
+    private ImageView ivBTh3ko = null;
     //
     private TextView tvJPADConnect = null;
-    private TextView tvH6Connect = null;
+    private TextView tvh3Connect = null;
     private TextView tvTrazas = null;
 
     @Override
@@ -55,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         //
         obtenirDispositiusBT();
         //
-        inicialitzarBT(CTE_NAME_H6);
+        inicialitzarJPAD(CTE_NAME_JPAD);
+        //
+        inicialitzarBT(CTE_NAME_h3);
         //
         actualitzarBT();
     }
@@ -66,24 +71,31 @@ public class MainActivity extends AppCompatActivity {
     }
     private void actualitzarBT() {
         // JPAD
-        ivBTJPko.setVisibility(ImageView.GONE);
-        ivBTJPok.setVisibility(ImageView.VISIBLE);
-        tvJPADConnect.setText(R.string.conectado);
-        escribirTrazasPantalla(getString(R.string.logJPADConectado));
-        // H6
-        if (m_cb.isConnected()) {
-            // H6 conectado
-            ivBTH6ko.setVisibility(ImageView.GONE);
-            ivBTH6ok.setVisibility(ImageView.VISIBLE);
-            tvH6Connect.setText(R.string.conectado);
-            escribirTrazasPantalla(getString(R.string.logH6Conectado));
+        if (mIsJPADConectado) {
+            ivBTJPko.setVisibility(ImageView.GONE);
+            ivBTJPok.setVisibility(ImageView.VISIBLE);
+            tvJPADConnect.setText(R.string.conectado);
+            escribirTrazasPantalla(getString(R.string.logJPADConectado));
+        } else {
+            ivBTJPko.setVisibility(ImageView.VISIBLE);
+            ivBTJPok.setVisibility(ImageView.GONE);
+            tvJPADConnect.setText(R.string.desconectado);
+            escribirTrazasPantalla(getString(R.string.logJPADDesconectado));
+        }
+        // h3
+        if (mIsH3Conectado) {
+            // h3 conectado
+            ivBTh3ko.setVisibility(ImageView.GONE);
+            ivBTh3ok.setVisibility(ImageView.VISIBLE);
+            tvh3Connect.setText(R.string.conectado);
+            escribirTrazasPantalla(getString(R.string.logH3Conectado));
         }
         else {
-            // H6 NO conectado
-            ivBTH6ko.setVisibility(ImageView.VISIBLE);
-            ivBTH6ok.setVisibility(ImageView.GONE);
-            tvH6Connect.setText(R.string.desconectado);
-            escribirTrazasPantalla(getString(R.string.logH6Desconectado));
+            // h3 NO conectado
+            ivBTh3ko.setVisibility(ImageView.VISIBLE);
+            ivBTh3ok.setVisibility(ImageView.GONE);
+            tvh3Connect.setText(R.string.desconectado);
+            escribirTrazasPantalla(getString(R.string.logH3Desconectado));
         }
     }
 
@@ -104,15 +116,15 @@ public class MainActivity extends AppCompatActivity {
         ivBTJPok.setVisibility(ImageView.GONE);
         ivBTJPko = (ImageView)findViewById(R.id.ivSenyalJpadKO);
         ivBTJPko.setVisibility(ImageView.VISIBLE);
-        ivBTH6ok = (ImageView)findViewById(R.id.ivSenyalH6OK);
-        ivBTH6ok.setVisibility(ImageView.GONE);
-        ivBTH6ko = (ImageView)findViewById(R.id.ivSenyalH6KO);
-        ivBTH6ko.setVisibility(ImageView.VISIBLE);
+        ivBTh3ok = (ImageView)findViewById(R.id.ivSenyalH3OK);
+        ivBTh3ok.setVisibility(ImageView.GONE);
+        ivBTh3ko = (ImageView)findViewById(R.id.ivSenyalH3KO);
+        ivBTh3ko.setVisibility(ImageView.VISIBLE);
         //
         tvJPADConnect = (TextView)findViewById(R.id.tvJPADConnect);
         tvJPADConnect.setText(R.string.desconectado);
-        tvH6Connect = (TextView)findViewById(R.id.tvH6Connect);
-        tvH6Connect.setText(R.string.desconectado);
+        tvh3Connect = (TextView)findViewById(R.id.tvH3Connect);
+        tvh3Connect.setText(R.string.desconectado);
         //
         tvTrazas = (TextView)findViewById(R.id.tvTrazas);
         tvTrazas.setText("");
@@ -126,8 +138,14 @@ public class MainActivity extends AppCompatActivity {
         if (m_cb != null) {
             DeviceBT devBT = cercarPropsDevice(m_listaDev, p_strDispName);
             if (devBT != null)
-                m_cb.inicialitzarBT(devBT.getMAC(), devBT.getUUID());
+                mIsH3Conectado = true;
         }
+    }
+    private void inicialitzarJPAD(String p_strDispName) {
+        mIsJPADConectado = false;
+        DeviceBT devBT = cercarPropsDevice(m_listaDev, p_strDispName);
+        if (devBT != null)
+            mIsJPADConectado = true;
     }
     private DeviceBT cercarPropsDevice(ArrayList<DeviceBT> plistaDev, String pDeviceName) {
         for (DeviceBT devBT : plistaDev) {

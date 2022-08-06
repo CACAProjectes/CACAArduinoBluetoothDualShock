@@ -56,9 +56,23 @@ public class ControlMandoJPActivity extends AppCompatActivity {
     private static final long CTE_VIBRATION_MS = 50;
     private Vibrator mVibr = null;
     //
-    private static final String CTE_NAME_H6 = "H6";
+    private static final String CTE_NAME_H3 = "H3";
     private ControlBluetooth m_cb = null;
     private ArrayList<DeviceBT> m_listaDev = null;
+    private String[] mMensajeBT = new String[10];
+    /*
+      0 - iServoAcc = pDatosSerial.substring(0,3).toInt();
+      //
+      1 - iServoDir = pDatosSerial.substring(3,6).toInt();
+      //
+      2 - iServoSen = pDatosSerial.substring(6,9).toInt();
+      //
+      3 - iLuz1 = pDatosSerial.substring(9,10).toInt();     Luces de posición
+      4 - iLuz2 = pDatosSerial.substring(10,11).toInt();
+      5 - iLuz3 = pDatosSerial.substring(11,12).toInt();
+      6 - iLuz4 = pDatosSerial.substring(12,13).toInt();    Intermitente izquierdo
+      7 - iLuz5 = pDatosSerial.substring(13,14).toInt();    Intermitente derecho
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,17 +83,18 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         //
         inicializar();
         //
-        inicialitzarBT(CTE_NAME_H6);
+        inicialitzarBT(CTE_NAME_H3);
         //
-        enviarMensaje();
+        enviarMensaje(getString(R.string.mensajeInicio));
     }
 
-    private void enviarMensaje() {
+    private void enviarMensaje(String pMensaje) {
+        Log.i("[BLUETOOTH-H3]","Mensaje: " + pMensaje);
         String strRes = getString(R.string.desconectado);
         if (m_cb != null) {
-            strRes = m_cb.enviarMissatge(getString(R.string.mensajeInicio));
+            strRes = m_cb.enviarMissatge(pMensaje);
         }
-        Log.i("[BLUETOOTH-H6]","Mensaje: " + getString(R.string.mensajeInicio) + " - Resultado: " + strRes);
+        Log.i("[BLUETOOTH-H3]","Resultado: " + strRes);
     }
 
     private void rotarRuedas() {
@@ -97,6 +112,8 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         mGradosDireccion.setText("" + (int)pAnguloFin + "º");
         //
         mAnguloDireccionAnt = pAnguloFin;
+        //  -1 to 1 -> 0 to 100
+        mMensajeBT[1] = "" + (100 - new Float((fValor + 1) * 50).intValue());
     }
 
     private void rotarRuedas(ImageView pImageView, float pAnguloIni, float pAnguloFin) {
@@ -115,22 +132,42 @@ public class ControlMandoJPActivity extends AppCompatActivity {
 
         pImageView.startAnimation(animSet);
     }
-    private void dibujarVista() {
-        //  Dirección ruedas
-        rotarRuedas();
+    private void acelerarFrenar() {
         //  Acelerador - Freno
         if (mDrawViewLine == null)
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
         mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
+        //  Aceleración + frenado
+        mMensajeBT[0] = "" + new Float(Math.abs(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER()) * 100).intValue();
+        // Sentido de la marcha
+        if (mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER() > 0)
+            mMensajeBT[2] = "0";
+        else
+            mMensajeBT[2] = "100";
+
+    }
+    private void dibujarVista() {
+        // Inicializar valors
+        mMensajeBT[3] = "9";    // Sin valor
+        mMensajeBT[4] = "9";    // Sin valor
+        mMensajeBT[5] = "9";    // Sin valor
+        mMensajeBT[6] = "9";    // Sin valor
+        mMensajeBT[7] = "9";    // Sin valor
+        //  Dirección ruedas
+        rotarRuedas();
+        //  Acelerador - Freno
+        acelerarFrenar();
         //  Intermitente izquierdo
         if (mBotonesMando.isBUTTON_L1()) {
             if (mIntermitentIzq.getVisibility() == View.VISIBLE) {
                 mIntermitentIzq.setVisibility(View.GONE);
                 mIntermitentBackIzq.setVisibility(View.VISIBLE);
+                mMensajeBT[6] = "0";
             }
             else {
                 mIntermitentIzq.setVisibility(View.VISIBLE);
                 mIntermitentBackIzq.setVisibility(View.GONE);
+                mMensajeBT[6] = "1";
             }
         }
         //  Intermitente derecho
@@ -138,10 +175,12 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             if (mIntermitentDer.getVisibility() == View.VISIBLE) {
                 mIntermitentDer.setVisibility(View.GONE);
                 mIntermitentBackDer.setVisibility(View.VISIBLE);
+                mMensajeBT[7] = "0";
             }
             else {
                 mIntermitentDer.setVisibility(View.VISIBLE);
                 mIntermitentBackDer.setVisibility(View.GONE);
+                mMensajeBT[7] = "1";
             }
         }
         //  Luces de emergencia
@@ -171,12 +210,31 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             if (mLuces.getVisibility() == View.VISIBLE) {
                 mLuces.setVisibility(View.GONE);
                 mLucesBack.setVisibility(View.VISIBLE);
+                mMensajeBT[3] = "0";
             }
             else {
                 mLuces.setVisibility(View.VISIBLE);
                 mLucesBack.setVisibility(View.GONE);
+                mMensajeBT[3] = "1";
             }
         }
+        // Enviar mensaje al BT
+        try {
+            Thread.sleep(250);
+        } catch (Exception ex) {
+        }
+        enviarMensaje(concatenarControles());
+    }
+
+    private String concatenarControles() {
+        return Utils.completarCeros(mMensajeBT[0], 3) +
+                Utils.completarCeros(mMensajeBT[1], 3) +
+                Utils.completarCeros(mMensajeBT[2], 3) +
+                mMensajeBT[3] +
+                mMensajeBT[4] +
+                mMensajeBT[5] +
+                mMensajeBT[6] +
+                mMensajeBT[7];
     }
 
     private void inicializar() {
