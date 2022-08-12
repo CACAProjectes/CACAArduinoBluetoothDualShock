@@ -59,7 +59,12 @@ public class ControlMandoJPActivity extends AppCompatActivity {
     private static final String CTE_NAME_H3 = "H3";
     private ControlBluetooth m_cb = null;
     private ArrayList<DeviceBT> m_listaDev = null;
-    private String[] mMensajeBT = new String[10];
+    private String[] mMensajeBT = new String[20];
+    private long mTimeActual = 0;
+    private long mTimeAnterior = 0;
+    private String mStrContAnt = "";
+    String mConcatenarControl = "";
+
     /*
       0 - iServoAcc = pDatosSerial.substring(0,3).toInt();
       //
@@ -67,11 +72,15 @@ public class ControlMandoJPActivity extends AppCompatActivity {
       //
       2 - iServoSen = pDatosSerial.substring(6,9).toInt();
       //
-      3 - iLuz1 = pDatosSerial.substring(9,10).toInt();     Luces de posición
-      4 - iLuz2 = pDatosSerial.substring(10,11).toInt();
-      5 - iLuz3 = pDatosSerial.substring(11,12).toInt();
-      6 - iLuz4 = pDatosSerial.substring(12,13).toInt();    Intermitente izquierdo
-      7 - iLuz5 = pDatosSerial.substring(13,14).toInt();    Intermitente derecho
+      3 - iServoBase = pDatosSerial.substring(9,12).toInt();
+      //
+      4 - iServoBrazo = pDatosSerial.substring(12,15).toInt();
+      //
+      5 - iLuz1 = pDatosSerial.substring(15,16).toInt();    Luces de posición
+      6 - iLuz2 = pDatosSerial.substring(16,17).toInt();    Sirena azul
+      7 - iLuz3 = pDatosSerial.substring(17,18).toInt();    Sirena rojo
+      8 - iLuz4 = pDatosSerial.substring(18,19).toInt();    Intermitente izquierdo
+      9 - iLuz5 = pDatosSerial.substring(19,20).toInt();    Intermitente derecho
      */
 
     @Override
@@ -84,22 +93,27 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         inicializar();
         //
         inicialitzarBT(CTE_NAME_H3);
-        //
-        enviarMensaje(getString(R.string.mensajeInicio));
     }
 
     private void enviarMensaje(String pMensaje) {
-        Log.i("[BLUETOOTH-H3]","Mensaje: " + pMensaje);
+        Log.d("[BLUETOOTH-H3]","Mensaje: " + pMensaje);
         String strRes = getString(R.string.desconectado);
         if (m_cb != null) {
             strRes = m_cb.enviarMissatge(pMensaje);
         }
-        Log.i("[BLUETOOTH-H3]","Resultado: " + strRes);
+    }
+
+    private void rotarRobot() {
+        // 0º a 180º -> -1 a 1
+        float fValorBase = mBotonesMando.getAXIS_Z();       // -1 a 1
+        float fValorBrazo = mBotonesMando.getAXIS_RZ();     // -1 a 1
+        //  -1 to 1 -> 0 to 100
+        mMensajeBT[3] = "" + (100 - new Float((fValorBase + 1) * 50).intValue());
+        mMensajeBT[4] = "" + (100 - new Float((fValorBrazo + 1) * 50).intValue());
     }
 
     private void rotarRuedas() {
         // -30º a 30º -> -1 a 1
-        //float fValor = mBotonesMando.getAXIS_X() + mBotonesMando.getAXIS_Y();   // -1 a 1
         float fValor = mBotonesMando.getAXIS_X();   // -1 a 1
         float pAnguloIni = mAnguloDireccionAnt;
         float pAnguloFin = (float)Utils.convert01ToPorcentajeDireccion(fValor);
@@ -113,7 +127,9 @@ public class ControlMandoJPActivity extends AppCompatActivity {
         //
         mAnguloDireccionAnt = pAnguloFin;
         //  -1 to 1 -> 0 to 100
-        mMensajeBT[1] = "" + (100 - new Float((fValor + 1) * 50).intValue());
+        int velocidad = (100 - new Float((fValor + 1) * 50).intValue());
+        velocidad = (velocidad / 5) * 5;
+        mMensajeBT[1] = "" + velocidad;
     }
 
     private void rotarRuedas(ImageView pImageView, float pAnguloIni, float pAnguloFin) {
@@ -138,9 +154,11 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             mDrawViewLine = (DrawViewLine)findViewById(R.id.viewMedioCirculo);
         mDrawViewLine.setAnguloRotacion(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER());
         //  Aceleración + frenado
-        mMensajeBT[0] = "" + new Float(Math.abs(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER()) * 100).intValue();
+        int velocidad = new Float(Math.abs(mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER()) * 100).intValue();
+        velocidad = (velocidad / 5) * 5;
+        mMensajeBT[0] = "" + velocidad;
         // Sentido de la marcha
-        if (mBotonesMando.getAXIS_RTRIGGER() - mBotonesMando.getAXIS_LTRIGGER() > 0)
+        if (mBotonesMando.getAXIS_RTRIGGER() > (mBotonesMando.getAXIS_LTRIGGER() - 0.20))
             mMensajeBT[2] = "0";
         else
             mMensajeBT[2] = "100";
@@ -148,26 +166,28 @@ public class ControlMandoJPActivity extends AppCompatActivity {
     }
     private void dibujarVista() {
         // Inicializar valors
-        mMensajeBT[3] = "9";    // Sin valor
-        mMensajeBT[4] = "9";    // Sin valor
         mMensajeBT[5] = "9";    // Sin valor
         mMensajeBT[6] = "9";    // Sin valor
         mMensajeBT[7] = "9";    // Sin valor
+        mMensajeBT[8] = "9";    // Sin valor
+        mMensajeBT[9] = "9";    // Sin valor
         //  Dirección ruedas
         rotarRuedas();
         //  Acelerador - Freno
         acelerarFrenar();
+        //  Robot - Base - Brazo
+        rotarRobot();
         //  Intermitente izquierdo
         if (mBotonesMando.isBUTTON_L1()) {
             if (mIntermitentIzq.getVisibility() == View.VISIBLE) {
                 mIntermitentIzq.setVisibility(View.GONE);
                 mIntermitentBackIzq.setVisibility(View.VISIBLE);
-                mMensajeBT[6] = "0";
+                mMensajeBT[8] = "0";
             }
             else {
                 mIntermitentIzq.setVisibility(View.VISIBLE);
                 mIntermitentBackIzq.setVisibility(View.GONE);
-                mMensajeBT[6] = "1";
+                mMensajeBT[8] = "1";
             }
         }
         //  Intermitente derecho
@@ -175,12 +195,12 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             if (mIntermitentDer.getVisibility() == View.VISIBLE) {
                 mIntermitentDer.setVisibility(View.GONE);
                 mIntermitentBackDer.setVisibility(View.VISIBLE);
-                mMensajeBT[7] = "0";
+                mMensajeBT[9] = "0";
             }
             else {
                 mIntermitentDer.setVisibility(View.VISIBLE);
                 mIntermitentBackDer.setVisibility(View.GONE);
-                mMensajeBT[7] = "1";
+                mMensajeBT[9] = "1";
             }
         }
         //  Luces de emergencia
@@ -210,31 +230,42 @@ public class ControlMandoJPActivity extends AppCompatActivity {
             if (mLuces.getVisibility() == View.VISIBLE) {
                 mLuces.setVisibility(View.GONE);
                 mLucesBack.setVisibility(View.VISIBLE);
-                mMensajeBT[3] = "0";
+                mMensajeBT[5] = "0";
             }
             else {
                 mLuces.setVisibility(View.VISIBLE);
                 mLucesBack.setVisibility(View.GONE);
-                mMensajeBT[3] = "1";
+                mMensajeBT[5] = "1";
             }
         }
-        // Enviar mensaje al BT
-        try {
-            Thread.sleep(250);
-        } catch (Exception ex) {
+        mConcatenarControl = concatenarControles();
+        mTimeActual = System.currentTimeMillis();
+        if (mTimeActual - mTimeAnterior > 100) {
+            if (!mConcatenarControl.equals(mStrContAnt)) {
+                enviarMensaje("A" + mConcatenarControl);
+                mStrContAnt = mConcatenarControl;
+            }
+            mTimeAnterior = mTimeActual;
         }
-        enviarMensaje(concatenarControles());
+        else {  // Comprobar si está parado
+            if (mConcatenarControl.startsWith("000")) {
+                enviarMensaje("A" + mConcatenarControl);
+                Log.d("[BLUETOOTH]","Parar actuadores!");
+            }
+        }
     }
 
     private String concatenarControles() {
         return Utils.completarCeros(mMensajeBT[0], 3) +
                 Utils.completarCeros(mMensajeBT[1], 3) +
                 Utils.completarCeros(mMensajeBT[2], 3) +
-                mMensajeBT[3] +
-                mMensajeBT[4] +
+                Utils.completarCeros(mMensajeBT[3], 3) +
+                Utils.completarCeros(mMensajeBT[4], 3) +
                 mMensajeBT[5] +
                 mMensajeBT[6] +
-                mMensajeBT[7];
+                mMensajeBT[7] +
+                mMensajeBT[8] +
+                mMensajeBT[9];
     }
 
     private void inicializar() {

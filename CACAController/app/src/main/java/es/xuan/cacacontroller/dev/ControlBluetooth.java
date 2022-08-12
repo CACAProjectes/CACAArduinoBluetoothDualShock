@@ -1,6 +1,7 @@
 package es.xuan.cacacontroller.dev;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -49,11 +50,13 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
+import es.xuan.cacacontroller.ControlMandoJPActivity;
 import es.xuan.cacacontroller.MainActivity;
 import es.xuan.cacacontroller.thread.ConnectedThread;
 
 public class ControlBluetooth extends Context {
     //private MainActivity m_activity = null;
+    //private ControlMandoJPActivity m_activity = null;
     private Activity m_activity = null;
     private ArrayList<DeviceBT> m_listDevices = null;
     //
@@ -66,6 +69,26 @@ public class ControlBluetooth extends Context {
     private BluetoothDevice mmDevice;
     private ConnectedThread btt = null;
     public Handler mHandler;
+    private boolean mensajeACK = true;
+    //
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_PRIVILEGED
+    };
+    private static String[] PERMISSIONS_LOCATION = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_PRIVILEGED
+    };
 
     public boolean isConnected() {
         return isConnected;
@@ -77,11 +100,43 @@ public class ControlBluetooth extends Context {
 
     private boolean isConnected = false;
 
+    public boolean isMensajeACK() {
+        return mensajeACK;
+    }
 
-    public ControlBluetooth(Activity p_activity) {
+    public void setMensajeACK(boolean mensajeACK) {
+        this.mensajeACK = mensajeACK;
+    }
+
+    public ControlBluetooth(ControlMandoJPActivity p_activity) {
         m_activity = p_activity;
     }
 
+    public ControlBluetooth(MainActivity p_activity) {
+        m_activity = p_activity;
+        //
+        checkPermissions();
+    }
+
+    private void checkPermissions(){
+        int permission1 = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permission2 = ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN);
+        if (permission1 != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    m_activity,
+                    PERMISSIONS_STORAGE,
+                    1
+            );
+        } else if (permission2 != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(
+                    m_activity,
+                    PERMISSIONS_LOCATION,
+                    1
+            );
+        }
+    }
+    @SuppressLint("MissingPermission")
     public ArrayList<DeviceBT> listDevicesBT() {
         //
         m_listDevices = new ArrayList<DeviceBT>();
@@ -89,7 +144,8 @@ public class ControlBluetooth extends Context {
         BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bAdapter == null) {
             // Device won't support Bluetooth
-            Log.i("[BLUETOOTH]", "Device won't support Bluetooth");
+            Log.e("[BLUETOOTH]", "Device won't support Bluetooth");
+            return null;
         }
         if (!bAdapter.isEnabled()) {
             int intVal = 1;
@@ -101,16 +157,6 @@ public class ControlBluetooth extends Context {
         dIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
         m_activity.startActivity(dIntent);
         // Get paired devices.
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return null;
-        }
         Set<BluetoothDevice> pairedDevices = bAdapter.getBondedDevices();
         if (pairedDevices.size() > 0) {
             // There are paired devices. Get the name and address of each paired device.
@@ -125,7 +171,7 @@ public class ControlBluetooth extends Context {
 
     public void printDevices() {
         for (DeviceBT dev : m_listDevices) {
-            Log.i("[DEVICES]", "NAME: " + dev.getName() + " - MAC: " + dev.getMAC() + " - UUID: " + dev.getUUID());
+            Log.d("[DEVICES]", "NAME: " + dev.getName() + " - MAC: " + dev.getMAC() + " - UUID: " + dev.getUUID());
         }
     }
 
@@ -184,7 +230,7 @@ public class ControlBluetooth extends Context {
                 tmp = mmDevice.createRfcommSocketToServiceRecord(MY_UUID);
                 mmSocket = tmp;
                 mmSocket.connect();
-                Log.i("[BLUETOOTH]", "Connected to: " + mmDevice.getName() + " - MAC: " + strMAC);
+                Log.d("[BLUETOOTH]", "Connected to: " + mmDevice.getName() + " - MAC: " + strMAC);
                 setConnected(true);
             } catch (IOException e) {
                 Log.e("[BLUETOOTH]", "MAC: " + strMAC + " - Error to Connect: " + e);
@@ -197,7 +243,7 @@ public class ControlBluetooth extends Context {
             }
             if (!isConnected())
                 return;
-            Log.i("[BLUETOOTH]", "Creating handler");
+            Log.d("[BLUETOOTH]", "Creating handler");
             mHandler = new Handler(Looper.getMainLooper()) {
                 @Override
                 public void handleMessage(Message msg) {
@@ -205,19 +251,18 @@ public class ControlBluetooth extends Context {
                     if (msg.what == ConnectedThread.RESPONSE_MESSAGE) {
                         String txt = (String) msg.obj;
                         try {
-                            if (!txt.equals(""))
-                                //m_activity.getTvResponse().setText(formatDate2String() + " BT " + txt + CTE_CAMBIO_LINEA_FIC + m_activity.getTvResponse().getText().toString());
-                                Log.i("[BLUETOOTH-rec]", formatDate2String() + " BT " + txt);
-                            if (txt.contains("ACCION_FINALIZADA"))
-                                //m_activity.setbProcesFin(true);
-                                Log.i("[BLUETOOTH-rec]", formatDate2String() + " BT VACIO!!!");
+                            Log.d("[BLUETOOTH-rec]", txt);
+                            if (txt.contains("ACK")) {
+                                setMensajeACK(true);
+                                Log.d("[BLUETOOTH-rec]", "Fin ejecución en H3!");
+                            }
                         } catch (Exception ex) {
-                            System.err.println("Error en CBT: " + ex);
+                            Log.e("[BLUETOOTH-error]", ex.toString());
                         }
                     }
                 }
             };
-            Log.i("[BLUETOOTH]", "Creating and running Thread");
+            Log.d("[BLUETOOTH]", "Creating and running Thread");
             btt = new ConnectedThread(mmSocket, mHandler);
             btt.start();
         }
@@ -231,18 +276,12 @@ public class ControlBluetooth extends Context {
         String strMensaje = "";
         if (mmSocket.isConnected() && btt != null) { //if we have connection to the bluetoothmodule
             byte[] bMissatge = (pMissatge + "\r").getBytes();
-            Log.i("[BLUETOOTH]", new String(bMissatge, StandardCharsets.UTF_8));
+            Log.d("[BLUETOOTH]", new String(bMissatge, StandardCharsets.UTF_8));
             btt.write(bMissatge);
-            /*
-            try {
-                Thread.sleep(100);
-            } catch (Exception ex) {
-            }
-             */
         } else {
-            strMensaje = " FICHERO " + "Se ha producido un ERROR" + CTE_CAMBIO_LINEA_FIC;
+            strMensaje = "[BLUETOOTH] Error - Connected: " + mmSocket.isConnected();
+            Log.e("[BLUETOOTH]", strMensaje);
         }
-        System.out.println(pMissatge);
         return strMensaje;
     }
 
